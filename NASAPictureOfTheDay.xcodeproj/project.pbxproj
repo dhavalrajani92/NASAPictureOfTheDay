@@ -3,19 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		BDA676B427A531DB00799D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676B327A531DB00799D53 /* AppDelegate.swift */; };
-		BDA676B627A531DB00799D53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676B527A531DB00799D53 /* SceneDelegate.swift */; };
-		BDA676B827A531DB00799D53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676B727A531DB00799D53 /* ViewController.swift */; };
+		BDA676B827A531DB00799D53 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676B727A531DB00799D53 /* DetailsViewController.swift */; };
 		BDA676BB27A531DB00799D53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA676B927A531DB00799D53 /* Main.storyboard */; };
 		BDA676BE27A531DB00799D53 /* NASAPictureOfTheDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDA676BC27A531DB00799D53 /* NASAPictureOfTheDay.xcdatamodeld */; };
 		BDA676C027A531DD00799D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA676BF27A531DD00799D53 /* Assets.xcassets */; };
 		BDA676C327A531DD00799D53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA676C127A531DD00799D53 /* LaunchScreen.storyboard */; };
 		BDA676CE27A531DE00799D53 /* NASAPictureOfTheDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676CD27A531DE00799D53 /* NASAPictureOfTheDayTests.swift */; };
 		BDA676D927A531DE00799D53 /* NASAPictureOfTheDayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676D827A531DE00799D53 /* NASAPictureOfTheDayUITests.swift */; };
+		BDA676F827A54B9700799D53 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676F727A54B9700799D53 /* SelectDateViewController.swift */; };
+		BDA6770027A54D6000799D53 /* PictureOfTheDayFlowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA676FF27A54D6000799D53 /* PictureOfTheDayFlowContainer.swift */; };
+		BDA6770827A5503300799D53 /* UITextField+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6770727A5503300799D53 /* UITextField+DatePicker.swift */; };
+		BDA6771027A551D300799D53 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6770F27A551D300799D53 /* DetailsViewModel.swift */; };
+		BDA6771527A5524700799D53 /* PictureOfTheDayFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6771427A5524700799D53 /* PictureOfTheDayFlowViewModel.swift */; };
+		BDA6771A27A557E100799D53 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6771927A557E100799D53 /* NetworkOperation.swift */; };
+		BDA6772227A55CFD00799D53 /* PictureDefination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6772127A55CFD00799D53 /* PictureDefination.swift */; };
+		BDA6772727A5611D00799D53 /* Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6772627A5611D00799D53 /* Fetching.swift */; };
+		BDA6774027A594B600799D53 /* OperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6773F27A594B600799D53 /* OperationFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +46,7 @@
 /* Begin PBXFileReference section */
 		BDA676B027A531DB00799D53 /* NASAPictureOfTheDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAPictureOfTheDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA676B327A531DB00799D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDA676B527A531DB00799D53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BDA676B727A531DB00799D53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDA676B727A531DB00799D53 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BDA676BA27A531DB00799D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDA676BD27A531DB00799D53 /* NASAPictureOfTheDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NASAPictureOfTheDay.xcdatamodel; sourceTree = "<group>"; };
 		BDA676BF27A531DD00799D53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +58,15 @@
 		BDA676D427A531DE00799D53 /* NASAPictureOfTheDayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAPictureOfTheDayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA676D827A531DE00799D53 /* NASAPictureOfTheDayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAPictureOfTheDayUITests.swift; sourceTree = "<group>"; };
 		BDA676DA27A531DE00799D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA676F727A54B9700799D53 /* SelectDateViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		BDA676FF27A54D6000799D53 /* PictureOfTheDayFlowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayFlowContainer.swift; sourceTree = "<group>"; };
+		BDA6770727A5503300799D53 /* UITextField+DatePicker.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UITextField+DatePicker.swift"; sourceTree = "<group>"; wrapsLines = 1; };
+		BDA6770F27A551D300799D53 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		BDA6771427A5524700799D53 /* PictureOfTheDayFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayFlowViewModel.swift; sourceTree = "<group>"; };
+		BDA6771927A557E100799D53 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		BDA6772127A55CFD00799D53 /* PictureDefination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDefination.swift; sourceTree = "<group>"; };
+		BDA6772627A5611D00799D53 /* Fetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetching.swift; sourceTree = "<group>"; };
+		BDA6773F27A594B600799D53 /* OperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A5FF8BF8CC28E86C2EDBD0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BDA676A727A531DB00799D53 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +108,7 @@
 				BDA676CC27A531DE00799D53 /* NASAPictureOfTheDayTests */,
 				BDA676D727A531DE00799D53 /* NASAPictureOfTheDayUITests */,
 				BDA676B127A531DB00799D53 /* Products */,
+				9A5FF8BF8CC28E86C2EDBD0D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +125,12 @@
 		BDA676B227A531DB00799D53 /* NASAPictureOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
+				BDA6773B27A591C100799D53 /* Models */,
+				BDA6773A27A591B000799D53 /* Networking */,
+				BDA6773927A591A400799D53 /* Utils */,
+				BDA6773627A5917100799D53 /* ViewController */,
+				BDA6773527A5915400799D53 /* FlowContainer */,
 				BDA676B327A531DB00799D53 /* AppDelegate.swift */,
-				BDA676B527A531DB00799D53 /* SceneDelegate.swift */,
-				BDA676B727A531DB00799D53 /* ViewController.swift */,
 				BDA676B927A531DB00799D53 /* Main.storyboard */,
 				BDA676BF27A531DD00799D53 /* Assets.xcassets */,
 				BDA676C127A531DD00799D53 /* LaunchScreen.storyboard */,
@@ -129,6 +156,67 @@
 				BDA676DA27A531DE00799D53 /* Info.plist */,
 			);
 			path = NASAPictureOfTheDayUITests;
+			sourceTree = "<group>";
+		};
+		BDA6773527A5915400799D53 /* FlowContainer */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6771427A5524700799D53 /* PictureOfTheDayFlowViewModel.swift */,
+				BDA676FF27A54D6000799D53 /* PictureOfTheDayFlowContainer.swift */,
+			);
+			path = FlowContainer;
+			sourceTree = "<group>";
+		};
+		BDA6773627A5917100799D53 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6773827A5918600799D53 /* Details */,
+				BDA6773727A5917B00799D53 /* SelectDate */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BDA6773727A5917B00799D53 /* SelectDate */ = {
+			isa = PBXGroup;
+			children = (
+				BDA676F727A54B9700799D53 /* SelectDateViewController.swift */,
+			);
+			path = SelectDate;
+			sourceTree = "<group>";
+		};
+		BDA6773827A5918600799D53 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				BDA676B727A531DB00799D53 /* DetailsViewController.swift */,
+				BDA6770F27A551D300799D53 /* DetailsViewModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		BDA6773927A591A400799D53 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6770727A5503300799D53 /* UITextField+DatePicker.swift */,
+				BDA6772627A5611D00799D53 /* Fetching.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BDA6773A27A591B000799D53 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6771927A557E100799D53 /* NetworkOperation.swift */,
+				BDA6773F27A594B600799D53 /* OperationFactory.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BDA6773B27A591C100799D53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6772127A55CFD00799D53 /* PictureDefination.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +349,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA676B827A531DB00799D53 /* ViewController.swift in Sources */,
+				BDA6770027A54D6000799D53 /* PictureOfTheDayFlowContainer.swift in Sources */,
+				BDA6770827A5503300799D53 /* UITextField+DatePicker.swift in Sources */,
+				BDA676B827A531DB00799D53 /* DetailsViewController.swift in Sources */,
 				BDA676B427A531DB00799D53 /* AppDelegate.swift in Sources */,
+				BDA6772727A5611D00799D53 /* Fetching.swift in Sources */,
+				BDA6771027A551D300799D53 /* DetailsViewModel.swift in Sources */,
+				BDA6772227A55CFD00799D53 /* PictureDefination.swift in Sources */,
+				BDA6771A27A557E100799D53 /* NetworkOperation.swift in Sources */,
+				BDA6771527A5524700799D53 /* PictureOfTheDayFlowViewModel.swift in Sources */,
+				BDA676F827A54B9700799D53 /* SelectDateViewController.swift in Sources */,
+				BDA6774027A594B600799D53 /* OperationFactory.swift in Sources */,
 				BDA676BE27A531DB00799D53 /* NASAPictureOfTheDay.xcdatamodeld in Sources */,
-				BDA676B627A531DB00799D53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
