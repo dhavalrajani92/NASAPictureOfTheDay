@@ -74,7 +74,7 @@ final class PictureCell: UICollectionViewCell {
   }
   
   func render(imageUrl: String, title: String, date: String) {
-    headerImageView.sd_setIndicatorStyle(.medium)
+    headerImageView.sd_setIndicatorStyle(.white)
     headerImageView.sd_addActivityIndicator()
     headerImageView.sd_imageTransition = .fade
     headerImageView.sd_setImage(with: URL(string: imageUrl)!, completed: {(image, error, cache, url) in
