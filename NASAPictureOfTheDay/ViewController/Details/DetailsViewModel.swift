@@ -5,6 +5,10 @@
 //  Created by Dhaval Rajani on 29/01/22.
 //
 
+import CoreData
+import Foundation
+import UIKit
+
 final class DetailsViewModel: Fetching {
   var fetchState: FetchState = .none {
     didSet {
@@ -14,9 +18,9 @@ final class DetailsViewModel: Fetching {
   
   var fetchCallback: ((FetchState) -> Void)?
   
-  private let selectedDate: String
+  let selectedDate: String
   private let operation: NetworkOperation<PictureDefination>
-  private var selectedDatePictureData: PictureDefination? = nil
+  var selectedDatePictureData: [String: Any]? = nil
   
   init(selectedDate: String, getPictureOperation: NetworkOperation<PictureDefination>) {
     self.selectedDate = selectedDate
@@ -34,7 +38,7 @@ extension DetailsViewModel {
         self.fetchState = .success
       case .failure(let message):
         self.fetchState = .failure(message)
-        print(message)
+        // Show error screen or alert
         break
       case .none:
         break
@@ -42,19 +46,19 @@ extension DetailsViewModel {
     })
   }
   
-  var headerImage: String {
-    return selectedDatePictureData?.imageUrl ?? ""
-  }
-  
-  var title: String? {
-    return selectedDatePictureData?.title
-  }
-  
-  var publishedDate: String? {
-    return selectedDatePictureData?.date
-  }
-  
-  var explanation: String? {
-    return selectedDatePictureData?.explanation
-  }
+//  var headerImage: String {
+//    return selectedDatePictureData?.imageUrl ?? ""
+//  }
+//
+//  var title: String? {
+//    return selectedDatePictureData?.title
+//  }
+//
+//  var publishedDate: String? {
+//    return selectedDatePictureData?.date
+//  }
+//
+//  var explanation: String? {
+//    return selectedDatePictureData?.explanation
+//  }
 }

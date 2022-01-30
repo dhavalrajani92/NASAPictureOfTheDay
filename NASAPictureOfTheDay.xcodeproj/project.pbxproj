@@ -24,6 +24,7 @@
 		BDA6772227A55CFD00799D53 /* PictureDefination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6772127A55CFD00799D53 /* PictureDefination.swift */; };
 		BDA6772727A5611D00799D53 /* Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6772627A5611D00799D53 /* Fetching.swift */; };
 		BDA6774027A594B600799D53 /* OperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6773F27A594B600799D53 /* OperationFactory.swift */; };
+		BDA6775C27A6959500799D53 /* PictureDefinationManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6775B27A6959500799D53 /* PictureDefinationManagedObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		BDA6772127A55CFD00799D53 /* PictureDefination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDefination.swift; sourceTree = "<group>"; };
 		BDA6772627A5611D00799D53 /* Fetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetching.swift; sourceTree = "<group>"; };
 		BDA6773F27A594B600799D53 /* OperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFactory.swift; sourceTree = "<group>"; };
+		BDA6775B27A6959500799D53 /* PictureDefinationManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDefinationManagedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		BDA676B227A531DB00799D53 /* NASAPictureOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
+				BDA6774E27A5A28A00799D53 /* CoreData */,
 				BDA6773B27A591C100799D53 /* Models */,
 				BDA6773A27A591B000799D53 /* Networking */,
 				BDA6773927A591A400799D53 /* Utils */,
@@ -217,6 +220,14 @@
 				BDA6772127A55CFD00799D53 /* PictureDefination.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BDA6774E27A5A28A00799D53 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6775B27A6959500799D53 /* PictureDefinationManagedObject.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 				BDA676B827A531DB00799D53 /* DetailsViewController.swift in Sources */,
 				BDA676B427A531DB00799D53 /* AppDelegate.swift in Sources */,
 				BDA6772727A5611D00799D53 /* Fetching.swift in Sources */,
+				BDA6775C27A6959500799D53 /* PictureDefinationManagedObject.swift in Sources */,
 				BDA6771027A551D300799D53 /* DetailsViewModel.swift in Sources */,
 				BDA6772227A55CFD00799D53 /* PictureDefination.swift in Sources */,
 				BDA6771A27A557E100799D53 /* NetworkOperation.swift in Sources */,

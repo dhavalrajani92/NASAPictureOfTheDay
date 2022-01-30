@@ -13,7 +13,7 @@ enum RequestMethod {
 }
 
 enum OperationResult<T> {
-  case success(object: T)
+  case success(object: [String: Any]?)
   case failure(message: String?)
 }
 
@@ -36,8 +36,8 @@ final class NetworkOperation<T: Decodable> {
     URLSession.shared.dataTask(with: requestUrl) { (responseData, response, error) in
       if error == nil && responseData != nil && responseData?.count != 0 {
         do {
-          let result = try JSONDecoder().decode(T.self, from: responseData!)
-          completionHandler(.success(object: result))
+          let result = try JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+          completionHandler(.success(object: result as? [String: Any]))
         } catch let error {
           completionHandler(.failure(message: error.localizedDescription))
         }
