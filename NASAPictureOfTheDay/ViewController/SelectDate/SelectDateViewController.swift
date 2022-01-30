@@ -13,10 +13,13 @@ protocol SelectDateDelegate {
 
 enum SelectDateActions {
   case navigateToDetails(date: String)
+  case navigateToFavoriteListing
 }
 
 final class SelectDateViewController: UIViewController {
   @IBOutlet weak var dateTextField: UITextField!
+  @IBOutlet weak var manageFavoriteListingLink: UILabel!
+  @IBOutlet weak var dateTextLabel: UILabel!
   
   var delegate: SelectDateDelegate?
   
@@ -24,11 +27,22 @@ final class SelectDateViewController: UIViewController {
     super.viewDidLoad()
     self.dateTextField.datePicker(target: self, doneAction: #selector(doneAction), cancelAction: #selector(cancelAction))
     self.dateTextField.becomeFirstResponder()
+    setupView()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.navigationBar.isHidden = true
+  }
+  
+  private func setupView() {
+    manageFavoriteListingLink.textColor = .blue
+    manageFavoriteListingLink.text = "Manage favorite listing"
+    manageFavoriteListingLink.isUserInteractionEnabled = true
+    dateTextLabel.text = "Select date"
+    
+    let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+    manageFavoriteListingLink.addGestureRecognizer(tap)
   }
   
   @objc
@@ -46,6 +60,10 @@ final class SelectDateViewController: UIViewController {
       self.dateTextField.resignFirstResponder()
       delegate?.didAction(.navigateToDetails(date: dateString))
     }
+  }
+  
+  @objc func handleTap(_ sender: UITapGestureRecognizer) {
+    delegate?.didAction(.navigateToFavoriteListing)
   }
   
 }

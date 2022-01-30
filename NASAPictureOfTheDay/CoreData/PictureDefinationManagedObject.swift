@@ -14,6 +14,7 @@ class PictureDefinationManagedObject: NSManagedObject {
   @NSManaged var mediaType: String
   @NSManaged var title: String
   @NSManaged var url: String
+  @NSManaged var isFavorite: Bool
   
   func update(with jsonDictionary: [String: Any]) throws {
     guard let date = jsonDictionary["date"] as? String,

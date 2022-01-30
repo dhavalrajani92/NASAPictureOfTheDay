@@ -5,20 +5,26 @@
 //  Created by Dhaval Rajani on 29/01/22.
 //
 
+import CoreData
 import UIKit
 
 final class PictureOfTheDayFlowContainer {
   unowned var navController: UINavigationController
-  var flowViewModel: PictureOfTheDayFlowViewModel = PictureOfTheDayFlowViewModel()
+  private let persistentContainer: NSPersistentContainer
+  
+  private let flowViewModel: PictureOfTheDayFlowViewModel
+  
   lazy var initialViewController: UIViewController? = {
     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let initialVc = mainStoryboard.instantiateInitialViewController() as? SelectDateViewController
-    initialVc?.delegate = self
+    guard let initialVc = mainStoryboard.instantiateInitialViewController() as? SelectDateViewController else { return nil }
+    initialVc.delegate = self
     return initialVc
   }()
   
-  init(navController: UINavigationController) {
+  init(flowViewModel: PictureOfTheDayFlowViewModel, navController: UINavigationController, persistentContainer: NSPersistentContainer) {
     self.navController = navController
+    self.persistentContainer = persistentContainer
+    self.flowViewModel = flowViewModel
     setupRootViewController()
   }
   
@@ -37,7 +43,18 @@ extension PictureOfTheDayFlowContainer: SelectDateDelegate {
     guard let viewController = storyboard.instantiateViewController(identifier: DetailsViewController.identifier) as? DetailsViewController else {
       return
     }
+    viewController.persistentContainer = persistentContainer
     viewController.viewModel = viewModel
+    self.navController.pushViewController(viewController, animated: true)
+  }
+  
+  private func navigateToFavoriteListing() {
+    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    guard let viewController = storyboard.instantiateViewController(identifier: ManageFavoriteListingViewController.identifier) as? ManageFavoriteListingViewController else {
+      return
+    }
+    viewController.persistentContainer = persistentContainer
+    viewController.delegate = self
     self.navController.pushViewController(viewController, animated: true)
   }
   
@@ -46,6 +63,19 @@ extension PictureOfTheDayFlowContainer: SelectDateDelegate {
     switch action {
     case .navigateToDetails(let date):
       navigateToDetails(selectedDate: date)
+    case .navigateToFavoriteListing:
+      navigateToFavoriteListing()
+    }
+  }
+}
+
+extension PictureOfTheDayFlowContainer: ManageFavoriteListingDelegate {
+  func didAction(_ action: ManageFavoriteListingActions) {
+    switch action {
+    case .backNavigation:
+      self.navController.popViewController(animated: true)
+    default:
+      break
     }
   }
   

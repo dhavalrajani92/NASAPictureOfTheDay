@@ -4,11 +4,12 @@
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="explanation" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="mediaType" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="NasaPod" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="NasaPod" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>

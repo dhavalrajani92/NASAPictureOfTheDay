@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = UIWindow(frame: UIScreen.main.bounds)
     self.window?.rootViewController = self.navigationController
     // Flowcontainer will handle navigate to inital controller
-    let _ = PictureOfTheDayFlowContainer(navController: self.navigationController)
+    let flowViewModel = PictureOfTheDayFlowViewModel()
+    let _ = PictureOfTheDayFlowContainer(flowViewModel: flowViewModel, navController: self.navigationController, persistentContainer: persistentContainer)
     self.window?.makeKeyAndVisible()
     return true
   }

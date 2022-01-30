@@ -21,10 +21,11 @@
 		BDA6771027A551D300799D53 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6770F27A551D300799D53 /* DetailsViewModel.swift */; };
 		BDA6771527A5524700799D53 /* PictureOfTheDayFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6771427A5524700799D53 /* PictureOfTheDayFlowViewModel.swift */; };
 		BDA6771A27A557E100799D53 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6771927A557E100799D53 /* NetworkOperation.swift */; };
-		BDA6772227A55CFD00799D53 /* PictureDefination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6772127A55CFD00799D53 /* PictureDefination.swift */; };
 		BDA6772727A5611D00799D53 /* Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6772627A5611D00799D53 /* Fetching.swift */; };
 		BDA6774027A594B600799D53 /* OperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6773F27A594B600799D53 /* OperationFactory.swift */; };
 		BDA6775C27A6959500799D53 /* PictureDefinationManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6775B27A6959500799D53 /* PictureDefinationManagedObject.swift */; };
+		BDA6777627A6C9F800799D53 /* ManageFavoriteListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6777527A6C9F800799D53 /* ManageFavoriteListingViewController.swift */; };
+		BDA6778627A6E96000799D53 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6778527A6E96000799D53 /* PictureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +66,11 @@
 		BDA6770F27A551D300799D53 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		BDA6771427A5524700799D53 /* PictureOfTheDayFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayFlowViewModel.swift; sourceTree = "<group>"; };
 		BDA6771927A557E100799D53 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
-		BDA6772127A55CFD00799D53 /* PictureDefination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDefination.swift; sourceTree = "<group>"; };
 		BDA6772627A5611D00799D53 /* Fetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetching.swift; sourceTree = "<group>"; };
 		BDA6773F27A594B600799D53 /* OperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFactory.swift; sourceTree = "<group>"; };
 		BDA6775B27A6959500799D53 /* PictureDefinationManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDefinationManagedObject.swift; sourceTree = "<group>"; };
+		BDA6777527A6C9F800799D53 /* ManageFavoriteListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteListingViewController.swift; sourceTree = "<group>"; };
+		BDA6778527A6E96000799D53 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		BDA6773627A5917100799D53 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BDA6777427A6C9E500799D53 /* ManageFavoriteListing */,
 				BDA6773827A5918600799D53 /* Details */,
 				BDA6773727A5917B00799D53 /* SelectDate */,
 			);
@@ -217,7 +220,6 @@
 		BDA6773B27A591C100799D53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BDA6772127A55CFD00799D53 /* PictureDefination.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +230,23 @@
 				BDA6775B27A6959500799D53 /* PictureDefinationManagedObject.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		BDA6777427A6C9E500799D53 /* ManageFavoriteListing */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6778D27A6E98400799D53 /* Cells */,
+				BDA6777527A6C9F800799D53 /* ManageFavoriteListingViewController.swift */,
+			);
+			path = ManageFavoriteListing;
+			sourceTree = "<group>";
+		};
+		BDA6778D27A6E98400799D53 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6778527A6E96000799D53 /* PictureCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,14 +379,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA6777627A6C9F800799D53 /* ManageFavoriteListingViewController.swift in Sources */,
 				BDA6770027A54D6000799D53 /* PictureOfTheDayFlowContainer.swift in Sources */,
+				BDA6778627A6E96000799D53 /* PictureCell.swift in Sources */,
 				BDA6770827A5503300799D53 /* UITextField+DatePicker.swift in Sources */,
 				BDA676B827A531DB00799D53 /* DetailsViewController.swift in Sources */,
 				BDA676B427A531DB00799D53 /* AppDelegate.swift in Sources */,
 				BDA6772727A5611D00799D53 /* Fetching.swift in Sources */,
 				BDA6775C27A6959500799D53 /* PictureDefinationManagedObject.swift in Sources */,
 				BDA6771027A551D300799D53 /* DetailsViewModel.swift in Sources */,
-				BDA6772227A55CFD00799D53 /* PictureDefination.swift in Sources */,
 				BDA6771A27A557E100799D53 /* NetworkOperation.swift in Sources */,
 				BDA6771527A5524700799D53 /* PictureOfTheDayFlowViewModel.swift in Sources */,
 				BDA676F827A54B9700799D53 /* SelectDateViewController.swift in Sources */,

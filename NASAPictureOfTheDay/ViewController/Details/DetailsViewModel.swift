@@ -19,10 +19,10 @@ final class DetailsViewModel: Fetching {
   var fetchCallback: ((FetchState) -> Void)?
   
   let selectedDate: String
-  private let operation: NetworkOperation<PictureDefination>
+  private let operation: NetworkOperation
   var selectedDatePictureData: [String: Any]? = nil
   
-  init(selectedDate: String, getPictureOperation: NetworkOperation<PictureDefination>) {
+  init(selectedDate: String, getPictureOperation: NetworkOperation) {
     self.selectedDate = selectedDate
     self.operation = getPictureOperation
   }
@@ -36,29 +36,14 @@ extension DetailsViewModel {
       case .success(let data):
         self.selectedDatePictureData = data
         self.fetchState = .success
-      case .failure(let message):
-        self.fetchState = .failure(message)
-        // Show error screen or alert
-        break
+      case .failure(let error):
+        guard let error = error as? Failure else {
+          return
+        }
+        self.fetchState = .failure(error.message)
       case .none:
         break
       }
     })
   }
-  
-//  var headerImage: String {
-//    return selectedDatePictureData?.imageUrl ?? ""
-//  }
-//
-//  var title: String? {
-//    return selectedDatePictureData?.title
-//  }
-//
-//  var publishedDate: String? {
-//    return selectedDatePictureData?.date
-//  }
-//
-//  var explanation: String? {
-//    return selectedDatePictureData?.explanation
-//  }
 }
