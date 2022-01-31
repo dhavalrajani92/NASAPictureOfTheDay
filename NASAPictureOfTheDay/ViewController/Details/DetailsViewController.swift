@@ -9,6 +9,14 @@ import CoreData
 import SDWebImage
 import UIKit
 
+protocol DetailsViewDelegate {
+  func didAction(_ action: DetailsViewDelegateActions)
+}
+
+enum DetailsViewDelegateActions {
+  case backNavigation
+}
+
 class DetailsViewController: UIViewController {
   static var identifier = "details_view"
   @IBOutlet weak var headerImageView: UIImageView!
@@ -17,6 +25,7 @@ class DetailsViewController: UIViewController {
   @IBOutlet weak var explanationLabel: UILabel!
   
   var persistentContainer: NSPersistentContainer?
+  var delegate: DetailsViewDelegate?
   
   private lazy var activityIndicator = UIActivityIndicatorView(style: .large)
   private lazy var fetchRequest: NSFetchRequest<PictureDefinationManagedObject> = {
@@ -173,7 +182,9 @@ class DetailsViewController: UIViewController {
   func showAlert(error: String?) {
     
     let alert = UIAlertController(title: "Network Error", message: error, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alert: UIAlertAction!) in
+      self.delegate?.didAction(.backNavigation)
+    }))
     self.present(alert, animated: true)
     
   }

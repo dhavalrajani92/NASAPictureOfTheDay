@@ -45,6 +45,7 @@ extension PictureOfTheDayFlowContainer: SelectDateDelegate {
     }
     viewController.persistentContainer = persistentContainer
     viewController.viewModel = viewModel
+    viewController.delegate = self
     self.navController.pushViewController(viewController, animated: true)
   }
   
@@ -78,6 +79,10 @@ extension PictureOfTheDayFlowContainer: ManageFavoriteListingDelegate {
       break
     }
   }
-  
-  
+}
+
+extension PictureOfTheDayFlowContainer: DetailsViewDelegate {
+  func didAction(_ action: DetailsViewDelegateActions) {
+    self.navController.popViewController(animated: true)
+  }
 }

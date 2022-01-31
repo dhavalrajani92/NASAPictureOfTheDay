@@ -130,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				BDA6774E27A5A28A00799D53 /* CoreData */,
-				BDA6773B27A591C100799D53 /* Models */,
 				BDA6773A27A591B000799D53 /* Networking */,
 				BDA6773927A591A400799D53 /* Utils */,
 				BDA6773627A5917100799D53 /* ViewController */,
@@ -215,13 +214,6 @@
 				BDA6773F27A594B600799D53 /* OperationFactory.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		BDA6773B27A591C100799D53 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		BDA6774E27A5A28A00799D53 /* CoreData */ = {
