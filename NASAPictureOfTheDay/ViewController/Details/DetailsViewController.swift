@@ -36,10 +36,14 @@ class DetailsViewController: UIViewController {
     return fetchRequest
   }()
   
+  private lazy var rightButton = UIBarButtonItem(title: "Make favorite", style: .plain, target: self, action: #selector(makeFavorite))
+  
+  
   var viewModel: DetailsViewModel?
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    rightButton.isEnabled = false
     viewModel?.fetchCallback = { [weak self] fetchState in
       switch fetchState {
       case .inProgress:
@@ -122,7 +126,6 @@ class DetailsViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.navigationBar.isHidden = false
-    let rightButton = UIBarButtonItem(title: "Make favorite", style: .plain, target: self, action: #selector(makeFavorite))
     self.navigationItem.rightBarButtonItem = rightButton
   }
   
@@ -151,6 +154,8 @@ class DetailsViewController: UIViewController {
   private func setupView() {
     guard let managedObjects = managedObjects else { return }
     titleLabel.font = UIFont(name: "Helvetica Bold", size: 24.0)
+    
+    rightButton.isEnabled = true
     
     headerImageView.sd_setIndicatorStyle(.medium)
     headerImageView.sd_addActivityIndicator()
